@@ -6,7 +6,7 @@
 
 ### http
 
-### 异步发展流程
+### [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
 
 ### ES6-Babel
 
@@ -17,6 +17,12 @@
 ### react
 
 ### 微信小程序、支付宝小程序
+
+### websocket
+
+### MySQL
+
+### MongoDB
 
 ### Linux
 
