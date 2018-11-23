@@ -10,6 +10,11 @@
 
 ## [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
 
+* 回调函数
+* promise用法、链式调用、A+规范
+* generator+co
+* async、await
+
 ## ES6-Babel
 
 ## 设计模式
