@@ -2,36 +2,36 @@
 
 备战2019
 
-## webpack
+### webpack
 
-## node
+### node
 
-## http
+### http
 
-## [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
+### [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
 
 * 回调函数
 * promise用法、链式调用、A+规范
 * generator+co
 * async、await
 
-## ES6-Babel
+### ES6-Babel
 
-## 设计模式
+### 设计模式
 
-## nginx
+### nginx
 
-## react
+### react
 
-## 微信小程序、支付宝小程序
+### 微信小程序、支付宝小程序
 
-## websocket
+### websocket
 
-## MySQL
+### MySQL
 
-## MongoDB
+### MongoDB
 
-## Linux
+### Linux
 
-## docker
+### docker
 
