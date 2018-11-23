@@ -28,6 +28,6 @@ read(function(result) {
 
 // 文件读取     fileSystem      异步的不支持 try catch      err是回调的第一个参数
 let fs = require('fs')    
-fs.readFile('./async/1.txt', 'utf8', function(err, data) {
+fs.readFile('./async/first.txt', 'utf8', function(err, data) {
     console.log(data)
 })
