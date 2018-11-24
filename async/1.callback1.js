@@ -26,6 +26,7 @@ read(function(result) {
     console.log(result)
 })
 
+// 服务端 node 单线程非阻塞异步 i/o
 // 文件读取     fileSystem      异步的不支持 try catch      err是回调的第一个参数
 let fs = require('fs')    
 fs.readFile('./async/first.txt', 'utf8', function(err, data) {
