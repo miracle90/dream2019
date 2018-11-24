@@ -17,7 +17,7 @@
 
 ### [浏览器原理](https://github.com/miracle90/dream2019/blob/master/browser/browser.md)
 
-### ES6-Babel
+### ES6 & Babel
 
 ### [设计模式](https://github.com/miracle90/dream2019/blob/master/design-patterns/design-patterns.md)
 
