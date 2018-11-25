@@ -15,7 +15,16 @@
 * generator+co
 * async、await
 
-### [浏览器原理](https://github.com/miracle90/dream2019/blob/master/browser/browser.md)
+### [浏览器相关](https://github.com/miracle90/dream2019/blob/master/browser/browser.md)
+
+* 浏览器历史
+* 进程线程
+* 浏览器渲染机制
+* 内核
+* js解释器
+* 网络
+* 存储
+* `经典问题：从浏览器的地址栏输入一个网址直到网页内容呈现完毕，发生了哪些事情？`
 
 ### ES6 & Babel
 
