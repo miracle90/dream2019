@@ -30,6 +30,15 @@
 
 ### [设计模式](https://github.com/miracle90/dream2019/blob/master/design-patterns/design-patterns.md)
 
+* 面向对象
+* 设计原则
+* 工厂模式
+* 单例模式
+* 适配器模式
+* 装饰者模式
+* 代理模式
+* 外观模式 & 观察者模式
+
 ### nginx
 
 ### react
