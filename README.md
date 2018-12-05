@@ -2,18 +2,20 @@
 
 前端架构师之路~
 
-### webpack
-
-### node
-
-### [网络相关](https://github.com/miracle90/dream2019/blob/master/network/network.md)
-
 ### [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
 
 * 回调函数
 * promise用法、链式调用、A+规范
 * generator+co
 * async、await
+
+### ES6 & Babel
+
+### Node
+
+### webpack
+
+### [网络相关](https://github.com/miracle90/dream2019/blob/master/network/network.md)
 
 ### [浏览器相关](https://github.com/miracle90/dream2019/blob/master/browser/browser.md)
 
@@ -25,8 +27,6 @@
 * 网络
 * 存储
 * `经典问题：从浏览器的地址栏输入一个网址直到网页内容呈现完毕，发生了哪些事情？`
-
-### ES6 & Babel
 
 ### [设计模式](https://github.com/miracle90/dream2019/blob/master/design-patterns/design-patterns.md)
 
