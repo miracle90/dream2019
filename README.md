@@ -11,11 +11,21 @@
 
 ### ES6 & Babel
 
+* 作用域
+* 解构
+* class
+* Set、Map
+* 模块化
+
 ### Node
 
 * EventLoop
 * commonjs规范
 * 核心模块
+* Buffer
+* Stream
+* fs
+* http
 
 ### webpack
 
