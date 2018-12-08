@@ -57,7 +57,7 @@
 
 ### react
 
-### [Typescript](https://github.com/miracle90/dream2019/tree/master/TypeScript)
+### [Typescript](https://github.com/miracle90/dream2019/blob/master/TypeScript/TypeScript.md)
 
 ### 前端性能优化
 
