@@ -49,7 +49,9 @@ function Promise(executor) {
 
 // 解析链式调用（他还要和其他的 promise 进行结合）
 function resolvePromise(x, promise, resolve, reject) {
-
+    if (xxx === promise) {
+        return reject(new TypeError('循环引用'))
+    }
 }
 
 // then 方法中需要传递两个参数，分别是成功的回调和失败的回调
