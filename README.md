@@ -2,6 +2,8 @@
 
 前端架构师之路~
 
+### JS 基础
+
 ### [异步发展流程](https://github.com/miracle90/dream2019/blob/master/async/async.md)
 
 * 回调函数
@@ -11,11 +13,21 @@
 
 ### ES6 & Babel
 
+* 作用域
+* 解构
+* class
+* Set、Map
+* 模块化
+
 ### Node
 
 * EventLoop
 * commonjs规范
 * 核心模块
+* Buffer
+* Stream
+* fs
+* http
 
 ### webpack
 
@@ -45,7 +57,17 @@
 
 ### nginx
 
+### Vue
+
 ### react
+
+### [Typescript](https://github.com/miracle90/dream2019/blob/master/TypeScript/TypeScript.md)
+
+### 前端性能优化
+
+### Koa、Express
+
+### Egg.js
 
 ### 微信小程序、支付宝小程序
 
@@ -59,3 +81,7 @@
 
 ### docker
 
+### 专题
+
+* 浏览器缓存
+* 跨域
