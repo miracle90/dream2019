@@ -11,15 +11,30 @@ function Girl() {
     EventEmitter.call(this)
 }
 util.inherits(Girl, EventEmitter)
+
 let girl = new Girl
+
+// 如果绑定的不是 newListener，需要让当前的 newListener 绑定的方法执行
+girl.on('newListener', function (type) {
+    if (type === '谈恋爱') {
+        process.nextTick(() => {
+            girl.emit('谈恋爱')
+        })
+    }
+})
+
 girl.on('失恋', function() {
     console.log('cry')
 })
+
 let drink = function () {
     console.log('喝酒')
 }
-girl.on('失恋', drink)
-girl.off('失恋', drink)
-setTimeout(() => {
-    girl.emit('失恋')
-}, 1000)
+
+girl.on('失恋', drink) 
+
+// girl.off('失恋', drink)
+
+// setTimeout(() => {
+//     girl.emit('失恋')
+// }, 1000)

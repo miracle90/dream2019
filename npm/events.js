@@ -11,6 +11,11 @@ EventEmitter.prototype.on = function (eventName, cb) {
     // }
     // 如果当前调用 on 方法时，自己还没有 events 属性，那就再加一个
     if (!this._events) this._events = {}
+
+    if (eventName !== 'newListener') {
+        
+    }
+
     let arr = this._events[eventName] || []
     this._events[eventName] = [...arr, cb]
 }
