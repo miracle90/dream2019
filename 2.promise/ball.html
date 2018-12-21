@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async ball</title>
+    <style>
+        .ball {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%
+        }
+        #ball1 {
+            top: 0;
+            left: 0;
+        }
+        #ball2 {
+            top: 120px;
+            left: 0;
+        }
+        #ball3 {
+            top: 240px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball1" class="ball"></div>
+    <div id="ball2" class="ball"></div>
+    <div id="ball3" class="ball"></div>
+    <script>
+        let $ = document.querySelector.bind(document)
+        function move(el, target) {
+            return new Promise(function (resolve, reject) {
+                let left = 0
+                let timer = setInterval(function () {
+                    left += 5
+                    if (left >= target) {
+                        el.style.left = target + 'px'
+                        clearInterval(timer)
+                        resolve()
+                    } else {
+                        el.style.left = left + 'px'
+                    }
+                }, 16)
+            })
+           
+        }
+
+        // async await 实现
+        async function asyncMove() {
+            await move($('#ball1'), 500)
+            await move($('#ball2'), 500)
+            await move($('#ball3'), 500)
+        }
+        asyncMove().then(function () {
+            console.log('async move')
+        })
+
+        // generator + co 实现
+        // function * generatorMove() {
+        //     yield move($('#ball1'), 500)
+        //     yield move($('#ball2'), 500)
+        //     yield move($('#ball3'), 500)
+        // }
+        // function co(it) {
+        //     return new Promise(function (resolve, reject) {
+        //         function next() {
+        //             let { value, done } = it.next()
+        //             if (done) {
+        //                 return resolve(value)
+        //             }
+        //             value.then(function (data) {
+        //                 next()
+        //             }, reject)
+        //         }
+        //         next()
+        //     })
+        // }
+        // co(generatorMove()).then(function (data) {
+        //     console.log('generator move')
+        // })
+
+        // promise实现
+        // move($('#ball1'), 500).then(function () {
+        //     return move($('#ball2'), 500)
+        // }).then(function () {
+        //     return move($('#ball3'), 500)
+        // }).then(function () {
+        //     console.log('promise move')
+        // })
+
+        // 回调实现
+        // move($('#ball1'), 500, function name(params) {
+        //     move($('#ball2'), 500, function name(params) {
+        //         move($('#ball3'), 500, function name(params) {
+        //             console.log('callback move')
+        //         })
+        //     })
+        // })
+    </script>
+</body>
+</html>
