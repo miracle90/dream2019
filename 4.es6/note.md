@@ -1,6 +1,6 @@
 ## ArrowFunction
 
-## Object.defineProperty
+## Object.defineProperty（es5）
 
 ## Class
 
