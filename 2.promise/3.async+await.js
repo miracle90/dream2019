@@ -1,5 +1,3 @@
-import { Script } from "vm";
-
 // 今日头条面试题
 async function async1() {
     console.log('async1 start')

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // H5 特性，用来监视 DOM 变动
+        let observer = new MutationObserver(function () {
+            console.log('DOM 更新完毕')
+            console.log(box.children.length)
+        })
+        let box = document.getElementById('box')
+        observer.observe(box, {childList: true})
+        for (let i = 0; i < 5; i++) {
+            box.appendChild(document.createElement('span'))
+        }
+        for (let i = 0; i < 10; i++) {
+            box.appendChild(document.createElement('span'))
+        }
+
+        console.log('同步')
+
+
+        // 只有 IE 支持
+        // setImmediate(function () {
+        //     console.log('setImmediate')
+        // })
+        // setTimeout(function () {
+        //     console.log('setTimeout')
+        // }, 0);
+        // let channel = new MessageChannel()
+        // let port1 = channel.port1
+        // let port2 = channel.port2
+        // port1.postMessage('MessageChannel')
+        // port2.onmessage = function (e) {
+        //     console.log(e.data)
+        // }
+        // Promise.resolve().then(function () {
+        //     console.log('promise')
+        // })
+        // console.log('同步')
+    </script>
+</body>
+</html>
