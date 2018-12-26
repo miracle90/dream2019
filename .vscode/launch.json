@@ -7,8 +7,9 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\6.eventLoop\\6.require.js"
+            "name": "my debugger",
+            "program": "${file}",
+            "cwd": "${cwd}"
         }
     ]
 }
