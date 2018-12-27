@@ -8,5 +8,5 @@ function multi(num) {
     return result
 }
 
-console.log(multi(2) === 2)
+console.log(typeof multi(2))
 console.log(multi(2)(3) === 6)
