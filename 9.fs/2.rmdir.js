@@ -26,8 +26,6 @@ let path = require('path')
 
 // readdirSync、statSync（isFile）、unlinkSync、rmdirSync
 
-// 先序，中序，后序
-
 // 先序 深度 同步
 // function removeDirSync(p) {
 //     // 判断类型 fs.statSync
@@ -56,16 +54,16 @@ let path = require('path')
 function removeDir(p, cb) {
     // 判断类型
     fs.stat(p, function (err, statObj) {
-        if (err) {
-            return console.log(err)
-        }
-        if (statObj.isDirectory) {
+        console.log(p)
+        if (statObj.isDirectory()) {
             fs.readdir(p, function (err, dirs) {
-                // 读取目录，如果没有儿子，就把自己删除
-                if (dirs.length === 0) fs.rmdir(p, cb)
+                // 把目录映射成相对路径
+                console.log(dirs)
                 dirs = dirs.map(dir => path.join(p, dir))
                 let index = 0
                 function next(i) {
+                    // 读取目录，如果没有儿子，就把自己删除
+                    if (dirs.length === i) return fs.rmdir(p, cb)
                     // 先删除 b 目录，后面放一个回调，当自己删除后，再调用回调继续删除
                     removeDir(dirs[i], () => next(i + 1))
                 }
