@@ -45,20 +45,32 @@ class ReadStream extends EventEmitter{
             return this.once('open', () => this.read())
         }
         // 到此说明 fd 存在，创建一个buffer，把文件中的内容读取到buffer中
-        console.log('read ', this.fd)
         let buffer = Buffer.alloc(this.highWaterMark)
         // 先计算一个靠谱的值来读取
-        fs.read(fd, buffer, 0, this.highWaterMark, this.position, function (err, bytesRead) {
+        // 怎么算应该读取多少个 一个要读取0-5,6个，每次读4个
+        let howMutchToRead = this.end ? Math.min(this.highWaterMark, this.end - this.position + 1) : this.highWaterMark
+        fs.read(this.fd, buffer, 0, howMutchToRead, this.position, (err, bytesRead) => {
             // 能读取到东西
             if (bytesRead > 0) {
                 this.position += bytesRead
-                this.emit('data', buffer)
+                let chunk = this.encoding ? buffer.slice(0, bytesRead).toString(this.encoding) : buffer.slice(0, bytesRead)
+                this.emit('data', chunk)
+                // 如果是流动模式，就要不停地读取，一直到读不到为止
                 if (this.flowing) {
                     this.read()
                 }
+            } else {
+                this.emit('end')
+                this.emit('close')
             }
-            
         })
+    }
+    pause () {
+        this.flowing = false
+    }
+    resume () {
+        this.flowing = true
+        this.read()
     }
 }
 

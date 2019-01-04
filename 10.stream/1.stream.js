@@ -9,7 +9,7 @@ let rs = new ReadStream(path.resolve(__dirname, 'a.txt'), {
     autoClose: true, // 读取完毕后，是否调用 fs.close 方法
     start: 0, // fs.read(position)
     end: 5, // 0-3 是4个，包前又包后
-    highWaterMark: 3 // 每次读取多少个，默认64k
+    highWaterMark: 4 // 每次读取多少个，默认64k
 })
 
 let arr = []
@@ -17,13 +17,13 @@ rs.on('open', function (fd) {
     console.log('open ', fd)
 })
 rs.on('data', function (data) {
-    console.log(data)
-    // rs.pause()
+    console.log('data ', data)
+    rs.pause()
     arr.push(data)
-    console.log(arr)
 })
 rs.on('end', function () {
-    console.log(Buffer.concat(arr).toString())
+    // console.log('end ', arr)
+    console.log('end ', Buffer.concat(arr).toString())
 })
 rs.on('close', function () {
     console.log('close')
@@ -31,6 +31,8 @@ rs.on('close', function () {
 rs.on('error', function (err) {
     console.log('err ', err)
 })
-// setTimeout(() => {
-//     rs.resume()
-// }, 1000);
+setTimeout(() => {
+    rs.resume()
+}, 1000);
+
+// 可写流
