@@ -1,0 +1,11 @@
+{
+  "name": "crawl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "puppeteer": "^1.11.0",
+    "request": "^2.88.0"
+  }
+}
