@@ -8,7 +8,7 @@ let ws = new WriteStream(path.resolve(__dirname, 'b.txt'), {
     mode: 0o666,
     autoClose: true,
     start: 0,               // 写入文件的位置
-    highWaterMark: 5        // 希望用的缓存区的大小，默认16k
+    highWaterMark: 3        // 希望用的缓存区的大小，默认16k
 })
 
 // 现在要向文件中写入10个数
@@ -18,7 +18,7 @@ function write() {
     flag = true
     while (flag && i >= 0) {
         flag = ws.write(i-- + '')
-        console.log(flag)
+        // console.log(flag)
     }
 }
 
