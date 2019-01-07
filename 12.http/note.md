@@ -70,3 +70,8 @@ URI(Uniform Resource Identifier)是统一资源标识符,在某个规则下能�
 
 * 500(Internal Server Error)服务器故障
 * 503(Service Unavailable) 服务器处于超负载或正在停机维护
+
+## 首部
+
+* Accept-Encoding: gzip, deflate, br
+* Accept-Language: zh-CN;q=1,zh;q=0.9,en;q=0.8
