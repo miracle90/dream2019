@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <!-- xhr 的方式（axios 封装好了数据格式，拦截器等） -->
+    <!-- fetch 原生的 api，基于 promise 的 -->
+    <script>
+        document.cookie = 'a=1'
+        document.cookie = 'b=1'
+        let xhr = new XMLHttpRequest()
+        // 设置请求头
+        xhr.open('PUT', 'http://localhost:3003/login', true)
+        xhr.setRequestHeader('lyy', 'lyy')
+        // 前端要求跨域携带cookie
+        xhr.withCredentials = true
+        xhr.onload = function () {
+            console.log('end')
+            box.innerHTML = xhr.response
+        }
+        xhr.send(JSON.stringify({
+            name: 'lyy',
+            password: '000000'
+        }))
+    </script>
+</body>
+</html>
