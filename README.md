@@ -17,16 +17,20 @@
 
 * 作用域
 * 解构
+* 扩展运算符
 * class
 * Set、Map
 * 模块化
+* 装饰器 Decorator
+* Proxy
 
 ### Node
 
-* EventLoop
+* EventLoop（浏览器、Node时间循环差异）
 * commonjs规范
 * 核心模块
 * Buffer
+* 手写 rmdir
 * Stream
 * fs
 * http
@@ -35,6 +39,8 @@
 * CORS
 * 浏览器缓存
 * 手写命令行工具（http-server）
+* cookie
+* 
 
 ### webpack
 
