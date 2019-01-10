@@ -2,6 +2,8 @@
 
 前端架构师之路~
 
+#### [面试题一一攻破](https://github.com/miracle90/Interview)
+
 ### JS 基础
 
 * JS专题之数据类型和类型检测
@@ -17,19 +19,30 @@
 
 * 作用域
 * 解构
+* 扩展运算符
 * class
 * Set、Map
 * 模块化
+* 装饰器 Decorator
+* Proxy
 
 ### Node
 
-* EventLoop
+* EventLoop（浏览器、Node时间循环差异）
 * commonjs规范
 * 核心模块
 * Buffer
+* 手写 rmdir
 * Stream
 * fs
 * http
+* 防盗链（document.referrer，后台 referer）
+* 断点续传
+* CORS
+* 浏览器缓存
+* 手写命令行工具（http-server）
+* cookie
+* 
 
 ### webpack
 
