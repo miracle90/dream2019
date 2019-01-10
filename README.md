@@ -30,6 +30,11 @@
 * Stream
 * fs
 * http
+* 防盗链（document.referrer，后台 referer）
+* 断点续传
+* CORS
+* 浏览器缓存
+* 手写命令行工具（http-server）
 
 ### webpack
 
