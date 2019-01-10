@@ -1,0 +1,16 @@
+{
+  "name": "lyy-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "lyy-server": "./bin/www.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "ejs": "^2.6.1",
+    "mime": "^2.4.0",
+    "mz": "^2.7.0"
+  }
+}
