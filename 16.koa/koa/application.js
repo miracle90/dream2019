@@ -1,14 +1,38 @@
 let http = require('http')
 let path = require('path')
 let fs = require('fs')
+let context = require('./context')
+let request = require('./request')
+let response = require('./response')
 
 class Koa {
     constructor () {
         this.middleware
+        // Object.create 创建对象，并且把方法写在原型上，避免污染原对象
+        // Object.create(null)，没有原型的对象
+        this.context = Object.create(context)
+        this.request = Object.create(request)
+        this.response = Object.create(response)
     }
     // 注册中间件的方法
     use (fn) {
         this.middleware = fn
+    }
+    // 创建上下文，自己封装 request response 属性
+    createContext (req, res) {
+        let ctx = this.context
+        // 请求相关
+        ctx.request = this.request
+        ctx.req = ctx.request.req = req
+        // 响应相关
+        ctx.response = this.response
+        ctx.res = ctx.response.res = res
+        return ctx
+    }
+    // 处理用户请求到来时
+    handleRequest (req, res) {
+        let ctx = this.createContext(req, res)
+        this.middleware(ctx)
     }
     listen (...args) {
         // 启动服务

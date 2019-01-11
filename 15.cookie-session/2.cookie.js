@@ -40,7 +40,7 @@ http.createServer((req, res) => {
         res.setCookie('age', '28', {httpOnly: true})
         res.end('ok')
     }
-    if (req.url = '/visit') {
+    if (req.url === '/visit') {
         let visit = 0
         // 用户访问了服务器多少次
         // cookie暴露在客户端，不能用来存放密码
@@ -58,3 +58,4 @@ http.createServer((req, res) => {
 }).listen(3000)
 
 // session 相对 cookie 比较安全 保存在服务端的 基于cookie
+// 相当于前台存一个卡号，后台存放响应数据
