@@ -13,10 +13,11 @@ class Koa {
         this.context = Object.create(context)
         this.request = Object.create(request)
         this.response = Object.create(response)
+        this.middlewares = []
     }
     // 注册中间件的方法
     use (fn) {
-        this.middleware = fn
+        this.middlewares.push(fn)
     }
     // 创建上下文，自己封装 request response 属性
     createContext (req, res) {
@@ -32,7 +33,9 @@ class Koa {
     // 处理用户请求到来时
     handleRequest (req, res) {
         let ctx = this.createContext(req, res)
-        this.middleware(ctx)
+        let fn = this.compose(this.middlewares, ctx)
+
+        // this.middleware(ctx)
         // 当中间件函数执行完之后，需要结束掉响应 res.end()
         res.end(ctx.body)
     }
