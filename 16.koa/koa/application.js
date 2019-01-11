@@ -33,6 +33,8 @@ class Koa {
     handleRequest (req, res) {
         let ctx = this.createContext(req, res)
         this.middleware(ctx)
+        // 当中间件函数执行完之后，需要结束掉响应 res.end()
+        res.end(ctx.body)
     }
     listen (...args) {
         // 启动服务

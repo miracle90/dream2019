@@ -14,8 +14,14 @@ app.use((ctx) => {
     console.log(ctx.req.url)
     console.log(ctx.request.req.url)
     console.log(ctx.request.url)
+    // ctx.url => ctx.request.url
     console.log(ctx.url)
+    console.log(ctx.path)
     // console.log(ctx.response.req.url)
+
+    ctx.response.body = 'world'
+    // ctx.body = 'world'
+    console.log(ctx.body)
     
     // ctx = {}
     // ctx.request = {}
