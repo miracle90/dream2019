@@ -30,6 +30,9 @@ class Koa {
         ctx.res = ctx.response.res = res
         return ctx
     }
+    compose () {
+        
+    }
     // 处理用户请求到来时
     handleRequest (req, res) {
         let ctx = this.createContext(req, res)
