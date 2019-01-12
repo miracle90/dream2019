@@ -61,6 +61,8 @@
 * 存储
 * `经典问题：从浏览器的地址栏输入一个网址直到网页内容呈现完毕，发生了哪些事情？`
 
+### web安全
+
 ### [设计模式](https://github.com/miracle90/dream2019/blob/master/design-patterns/design-patterns.md)
 
 * 面向对象
