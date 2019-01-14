@@ -1,0 +1,20 @@
+# test
+
+10.60.42.184 affiliate.gearbest.test
+10.60.42.184 affiliate.gw-ec.test
+10.60.42.184 firstgrabber.test
+
+
+127.0.0.1 www.zf1.com
+127.0.0.1 www.zf2.com
+127.0.0.1 localhost
+127.0.0.1 gearbest.lol
+127.0.0.1 firstgrabber.lol
+127.0.0.1 zaful.lol
+127.0.0.1 rosegal.lol
+127.0.0.1 dresslily.lol
+127.0.0.1 aff.com::1 localhost
+::1 localhost
+# 10.33.100.199 dmp-admin.com.master.php7.egomsl.com
+0.0.0.0 account.jetbrains.com
+10.33.6.211 windows10.microdone.cn
