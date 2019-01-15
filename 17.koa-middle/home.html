@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    首页，退出登录
+    <script>
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', '/validate', true)
+        // 响应的类型是 json
+        xhr.responseType = 'json'
+        xhr.onload = function () {
+            let { code } = xhr.response
+            if (code) {
+                location.href = '/login.html'
+            }
+        }
+        xhr.send()
+    </script>
+</body>
+</html>
