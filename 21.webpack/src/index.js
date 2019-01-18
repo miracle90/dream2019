@@ -11,7 +11,7 @@ console.log(window.$)
 console.log($)
 
 // 图片的引入方式
-// 1、js引入
+// 1、js引入 => file-loader
 // 会把 logo 进行生成一张新的图片放到 dist 目录下，会返回一个新的图片地址
 import logo from './2.jpg'      // 依赖的文件会被打包
 let img = new Image()
@@ -19,8 +19,8 @@ let img = new Image()
 img.src = logo // 不能放字符串
 document.body.appendChild(img)
 
-// 2、css背景图
-// 3、img标签
+// 2、css背景图 => css-loader
+// 3、img标签 => html-withimg-loader
 
 
 
