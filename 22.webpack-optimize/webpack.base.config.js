@@ -3,16 +3,31 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 let CleanWebpackPlugin = require('clean-webpack-plugin')
 let CopyWebpackPlugin = require('copy-webpack-plugin')
 let webpack = require('webpack')
+let HappyPack = require('happypack')
 // BannerPlugin 版权声明
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
     entry: {
         app: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[hash].js'
+    },
+    // 解析，第三方模块解析的规则
+    resolve: {
+        modules: [path.resolve('node_modules')],
+        // // 入口文件的配置
+        // mainFiles: ['a.js', 'index.js'],
+        // // 如果字段的配置
+        // mainFields: ['style', 'main'],
+        // 入口别名
+        alias: {
+            'bootstrap': 'bootstrap/dist/css/bootstrap.css'
+        },
+        // 扩展名，找的优先级 js => json => css
+        extensions: ['.js', '.json', '.css']
     },
     // 监听打包
     // watch: true,
@@ -64,24 +79,57 @@ module.exports = {
         }
     },
     module: {
+        // 如果确定没有依赖，写在这里，webpack 不做模块依赖查找，提高打包速率
+        noParse: /jquery/,
         rules: [
+            {
+                test: /\.css$/,
+                use: 'HappyPack/loader?id=css',
+                // use: ['style-loader', 'css-loader'],
+            },
             {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),        // 只解析 src 目录下
                 exclude: /node_modules/,                        // 不解析 node_modules 目录
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/preset-react'               // react jsx 语法解析
-                        ]
-                    }
-                }
+                use: 'HappyPack/loader?id=js',
+                // use: {
+                //     loader: 'babel-loader',
+                //     options: {
+                //         presets: [
+                //             '@babel/preset-env',
+                //             '@babel/preset-react'               // react jsx 语法解析
+                //         ]
+                //     }
+                // }
             }
         ]
     },
     plugins: [
+        new HappyPack({
+            id: 'css',
+            use: ['style-loader', 'css-loader'],
+        }),
+        new HappyPack({
+            id: 'js',
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react' // react jsx 语法解析
+                    ]
+                }
+            }]
+        }),
+        // 如果发现 moment 中引入了 locale，忽略掉，就不会打包
+        new webpack.IgnorePlugin(/\.\/locale/, /moment/),
+        new webpack.DefinePlugin({
+            // 定义的变量，需要用 JSON.stringify 包裹
+            // 定义的变量在全局上
+            DEV: JSON.stringify('development'),
+            EXPRESSION: '1+1',
+            FLAG: 'true'
+        }),
         new HtmlWebpackPlugin({
             template: './index.html',
             filename: 'index.html',
@@ -114,3 +162,9 @@ module.exports = {
 // 1、后台配置白名单 cors
 // 2、代理 => webpack 配置 DevServer 的 before 钩子
 // 3、服务端启动 webpack
+
+// new webpack.DefinePlugin()
+// 测试环境
+// 上线环境
+
+// 配置开发环境、测试环境、生产环境
