@@ -33,3 +33,24 @@ create-react-app react-app
 - yarn build 打包
 - yarn text jest进行单元测试
 - yarn eject 弹射配置
+
+## 生命周期
+
+### 组件开始
+
+- static defaultProps
+- constructor
+- componentWillMount
+- render
+- componentDidMount
+
+### 运行时
+
+> 洋葱模型
+
+- componentWillReceiveProps（props变化）
+- shouldComponentUpdate
+- componentWillUpdate
+- render
+- componentDidUpdate
+- componentWillUnmount（卸载）
