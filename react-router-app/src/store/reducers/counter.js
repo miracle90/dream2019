@@ -13,7 +13,6 @@ function reducer(state = initState, action) {
                 number: state.number - action.count
             }
         case types.MULTI:
-            console.log('multi')
             return {
                 number: state.number * action.count
             }
