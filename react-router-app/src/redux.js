@@ -24,4 +24,7 @@ let createStore = reducer => {
     }
 }
 
-// redux
+export {
+    // 创建容器的方法
+    createStore
+}
