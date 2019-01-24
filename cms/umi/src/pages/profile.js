@@ -1,14 +1,24 @@
+/**
+ * title: profile page
+ * Routes:
+ *  - ./PrivateRoute.js
+ */
 import React from 'react'
-// history
 import router from 'umi/router'
 
 export default class Profile extends React.Component {
+    handleLogout = () => {
+        localStorage.removeItem('login')
+        router.push('/login')
+    }
     render () {
         return (
             <div>
                 Profile
-                <button onClick={() => router.goBack()}>返回</button>
+                <button onClick={this.handleLogout}>推出登录</button>
             </div>
         )
     }
 }
+
+// YAML格式

@@ -8,7 +8,9 @@
     "build": "umi build"
   },
   "dependencies": {
+    "bootstrap": "3",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-transition-group": "^2.5.3"
   }
 }
