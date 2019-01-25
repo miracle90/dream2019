@@ -1,11 +1,15 @@
 import { takeEvery, put, take } from './redux-saga/effects'
 import * as types from './store/action-types'
 
+function * add () {
+    yield put({type: types.ADD})
+}
+
 export default function * rootSaga() {
     for (let i = 0; i < 3; i++) {
         // take 监听一次动作类型 => events once
         let action = yield take(types.ASYNC_ADD)
-        yield put({type: types.ADD})
+        yield add()
     }
     console.log('已经到达最大数量3')
 }
