@@ -1,9 +1,9 @@
-import { takeEvery, put, take } from 'redux-saga/effects'
+import { takeEvery, put, take } from './redux-saga/effects'
 import * as types from './store/action-types'
 
 export default function * rootSaga() {
     for (let i = 0; i < 3; i++) {
-        // 监听一次动作类型
+        // take 监听一次动作类型 => events once
         let action = yield take(types.ASYNC_ADD)
         yield put({type: types.ADD})
     }
