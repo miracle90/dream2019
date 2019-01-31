@@ -22,6 +22,8 @@ tsc 1.ts
 
 ### 2.2 TypeScript + Vscode
 
+生成配置文件
+
 ```
 // 初始化 tsconfig.json
 tsc --init
