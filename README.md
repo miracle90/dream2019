@@ -42,7 +42,6 @@
 * 浏览器缓存
 * 手写命令行工具（http-server）
 * cookie
-* 
 
 ### webpack
 
@@ -95,6 +94,8 @@
 ### MySQL
 
 ### MongoDB
+
+### Redis
 
 ### Linux
 
