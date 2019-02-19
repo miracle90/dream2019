@@ -77,7 +77,13 @@
 
 ### Vue
 
-### react
+### React
+
+* 纯函数
+* 受控组件 & 非受控组件
+* Refs
+* Context
+* 高阶组件
 
 ### [Typescript](https://github.com/miracle90/dream2019/blob/master/TypeScript/TypeScript.md)
 
